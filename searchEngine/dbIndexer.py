@@ -24,8 +24,7 @@ def distance(histA, histB, eps = 1e-10):
 	# return the chi-squared distance
 	return d 
 
-dataset = " "
-index_path = " "
+dataset = "../Client/src/assets"
 
 #MongoDB
 client=MongoClient('mongodb://localhost:27017/images')
@@ -34,7 +33,7 @@ collection=db.hogClusters
 collection2=db.hogDescriptors
 
 #Read hogDescriptors from indexed CSV
-data = pd.read_csv(index_path, sep=",", header=None)
+data = pd.read_csv("../index.csv", sep=",", header=None)
 hog_features = data[1]
 array_edge=hog_features.apply(lambda row: np.array(ast.literal_eval(row)))
 a = np.array(array_edge.values.tolist())

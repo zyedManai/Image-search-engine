@@ -1,0 +1,12 @@
+<form action="/" method="POST">
+    <div class="row py-4">
+        <div class="col"></div>
+        <div class="col">
+            <div class="input-group flex-nowrap ">
+                <input type='file' (change)="onFileSelected($event)" name="image">
+                <button type="button" (click)="onUpload()">Upload</button>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</form>
